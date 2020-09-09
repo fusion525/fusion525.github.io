@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Protokollok szerepe a kommunikációban</title>
+    <link rel="icon" type="image/png" href="https://img.icons8.com/color/344/thin-client.png">
+<style>
+
+    #pageTitle {
+        display: inline;
+    }
+  
+    #decorImg {
+        display: inline;
+    }
+
+    legend {
+        color: white;
+        background: black;
+    }
+
+    table, th, tr, td {
+        border: 1px solid black;
+        border-collapse: collapse;
+        text-align: center;
+    }
+</style>
+
+</head>
+<body>
+    <img width="56" height="56" id="decorImg" alt="3 darab blade szerver rajzolva" src="https://image.flaticon.com/icons/svg/900/900297.svg">
+    <h1 id="pageTitle"><u>Protokollok szerepe a kommunikációban</u></h1>
+    <fieldset>
+        <legend>Tartalom jegyzék</legend>
+        <ol>
+            <li><a href="#bevezetes">Bevezetés</a></li>
+            <li><a href="#protokollokRetegek">Protokollok rétegek szerint</a>
+                <ol>
+                    <li><a href="#linkLayer">Link Layer</a></li>
+                    <li><a href="#internetLayer">Internet Layer</a></li>
+                    <li><a href="#transportLayer">Transport Layer</a></li>
+                    <li><a href="#applicationLayer">Application Layer</a></li>
+                </ol>
+            </li>
+        </ol>
+    </fieldset>
+    
+    <h3><a id="bevezetes"></a>1. Bevezetés</h3>
+    
+    <p>
+        Az Internet protokollcsomag az interneten és hasonló számítógépes hálózatokban használt kommunikációs protokollok fogalmi modellje és készlete. 
+        <b>TCP/IP</b> néven ismert, mivel a csomag alapvető protokolljai a <b>TCP</b> protokoll és az <b>IP</b> protokoll. 
+        Fejlesztése során, több néven is ismerté vált, mint például a <b>Department of Defense (DoD) modell</b>, mert a kutatást teljes egészében a
+        az Egyesült Államok Védelmi Minisztériuma a <b><a href="https://www.darpa.mil/" target="_blank">DARPA</a></b> finanszírozta. <br>
+        A megvalósítása egy protokoll készlet.
+        <br>
+        Az Internet protokollcsomag végpontok közötti adatkommunikációt biztosít, amely meghatározza az adatok csomagba darabolását, címzését, továbbítását, útválasztásátés és fogadását. 
+        Ez a funkció négy absztrakciós rétegbe van rendezve, 
+        amelyek az összes kapcsolódó protokollt az érintett hálózatkezelés hatóköre szerint osztályozzák.
+    </p>
+    
+    <h3><a id="protokollokRetegek">2. Protokollok rétegek szerint</a></h3>
+    
+    <table>
+        <tr>
+            <th>szint</th>
+            <th>TCP/IP modell</th>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>Application Layer</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>Transport Layer</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>Internet Layer</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>Link Layer</td>
+        </tr>
+    </table>
+    
+    <p>
+        <h4><a id="linkLayer">Link layer</a></h4>
+        <br>
+        A Link layer a legalacsonyabb réteg a számítóges hálózatokban. Ez teremti meg a fizikai és logikai kapcsolatot, ami az adott kiszolgálót, vagy node-ot csatlakoztatja a hálózathoz.
+        <br>
+        <u>Fontosabb protokollok a rétegben:</u>
+        <ol>
+            <li>Ethernet protokoll</li>
+            <li>Wi-Fi</li>
+            <li>DSL</li>
+        </ol>
+    </p>
+    <p>
+        <h4><a id="internetLayer">Internet Layer</a></h4>
+        <br>
+        Az internet réteg hálózati megoldások és protokollok csoportja, ami a hálózati adatcsomagok "szállításáért" felel.
+        <br>
+        <u>Fontosabb protokollok a rétegben:</u>
+        <ol>
+            <li>IPv4</li>
+            <li>IPv6</li>
+            <li>IPsec</li>
+        </ol>
+
+    </p>
+
+    <p>
+        <h4><a id="transportLayer">Transport Layer</a></h4>
+        <br>
+        A réteg protokolljai a host-to-host kommunikációt biztosítanak az alkalmazások számára. Különböző szolgáltatásokat kínál, mint például kapcsolat orientált kommunikációt, megbízhatóságot, flow kontrollt és multiplexelést.
+        <br>
+        <u>Fontosabb protokollok a rétegben:</u>
+        <ol>
+            <li>TCP</li>
+            <li>UDP</li>
+            <li>DCCP</li>
+        </ol>
+
+    </p>
+
+    <p>
+        <h4><a id="applicationLayer">Application Layer</a></h4>
+        <br>
+        Az alkalmazásréteg egy absztrakciós réteg, amely meghatározza a kommunikációs hálózat állomásai által használt megosztott kommunikációs protokollokat és az interface metódusokat.
+        <br>
+        <u>Fontosabb protokollok a rétegben:</u>
+        <ol>
+            <li>HTTP</li>
+            <li>HTTPS</li>
+            <li>FTP</li>
+        </ol>
+
+    </p>
+</body>
+</html>
