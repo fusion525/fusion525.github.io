@@ -220,3 +220,58 @@ textarea {
 .contact-form {
   padding: 20px;
 }
+
+@media screen and (max-width: 760px) {
+  .sketchfab-embed-wrapper {
+    display: none;
+  }
+}
+
+.mobile-nav-bar {
+  width: 100%;
+  background-color: rgb(71, 71, 226);
+  bottom: 0;
+  position: sticky;
+  position: -webkit-sticky;
+  z-index: 2;
+  text-decoration: none;
+}
+
+.mobile-nav-bar li {
+  display: inline;
+  color: white;
+  padding: 5px;
+  
+}
+
+.mobile-nav-bar li:hover {
+  background-color: rgba(209, 199, 199, 0.671);
+}
+
+.mobile-nav-bar ul {
+  color: white;
+  text-decoration: none;
+  padding: 1vh;
+}
+
+.mobile-nav-bar a {
+  text-decoration: none;
+  color: white;
+}
+
+.mobile-nav-bar button {
+  background: none;
+  border: none;
+}
+
+@media screen and (max-width: 770px) {
+  nav ul {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 770px) {
+  .mobile-nav-bar {
+    display: none;
+  }
+}
