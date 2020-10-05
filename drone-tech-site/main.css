@@ -267,6 +267,7 @@ textarea {
 @media screen and (max-width: 770px) {
   nav ul {
     display: none;
+    
   }
 }
 
