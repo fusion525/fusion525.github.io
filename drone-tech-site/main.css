@@ -51,7 +51,7 @@ header {
   header h1 {
     position: absolute;
     bottom: 150px;
-    margin-left: 100px;
+    margin-left: 2.5%;
     color: white;
     padding: 10px;
   }
@@ -62,7 +62,7 @@ header {
   
     @media (pointer: coarse) and (hover: none) {
     header {
-      background: url('https://source.unsplash.com/XT5OInaElMw/1600x900') black no-repeat center center scroll;
+      background: url('img/cover-photo.jpg') black no-repeat center center scroll;
     }
     header video {
       display: none;
@@ -84,10 +84,15 @@ header {
   background-color: rgba(209, 199, 199, 0.671);
 }
 
+@media screen and (min-width: 770px) {
 nav {
   padding: 20px 100px 0px 100px;
 }
+}
 
+nav {
+  padding: 20px;
+}
 .menu-item {
     display: inline;
     padding: 5px;
@@ -103,15 +108,9 @@ nav {
   border: none;
   background: none;
 }
-
-.site-logo {
-    margin: 0 0 0 0;
-}
-
 footer {
     background-color: rgb(92, 92, 92);
     color: white;
-    margin: 0px 0px 0px 0px;
     padding: 20px 0 20px 5px; 
     
 }
@@ -229,12 +228,14 @@ textarea {
 
 .mobile-nav-bar {
   width: 100%;
-  background-color: rgb(81, 81, 230);
+  height: 8vh;
+  background-color: rgb(49, 49, 233);
   bottom: 0;
   position: sticky;
   position: -webkit-sticky;
-  z-index: 2;
+  z-index: 101;
   text-decoration: none;
+  box-sizing: border-box;
 }
 
 .mobile-nav-bar li {
