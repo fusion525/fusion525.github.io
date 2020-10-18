@@ -12,7 +12,7 @@ function emailValidator(){
     console.log(email);
 }
 
-document.getElementById("email-input").addEventListener("change", emailValidator);
+document.getElementById("email-input").addEventListener("input", emailValidator);
 
 function telValidator() {
     let tel = document.getElementById("tel-input").value;
@@ -26,4 +26,4 @@ function telValidator() {
     }
 }
 
-document.getElementById("tel-input").addEventListener("change", telValidator);
+document.getElementById("tel-input").addEventListener("input", telValidator);

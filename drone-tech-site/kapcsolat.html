@@ -44,18 +44,18 @@
                     <form action="" method="POST">
                         <div class="form-group">
                           <label for="name-input">Név</label>
-                          <input type="text" class="form-control" id="name-input" placeholder="">
+                          <input type="text" required class="form-control" id="name-input" placeholder="">
                         </div>
                         <div class="form-group">
                           <label for="email-input">E-mail</label>
-                          <input type="email" class="form-control" id="email-input" placeholder="">
+                          <input type="email" required class="form-control" id="email-input" placeholder="">
                         </div>
                         <div class="alert alert-danger" id="email-warning" role="alert" style="display: none;">
                             Helytelen Email formátum!
                         </div>
                         <div class="form-group">
                             <label for="tel-input">Telefonszám</label>
-                            <input type="tel" class="form-control" id="tel-input" placeholder="">
+                            <input type="tel" required class="form-control" id="tel-input" placeholder="">
                         </div>
                         <div class="alert alert-danger" id="tel-warning" role="alert" style="display: none;">
                             Helytelen Telefonszám formátum!
@@ -66,16 +66,16 @@
                           </div>
                         <p>Megkeresés célja</p>
                         <div class="custom-control custom-radio">
-                            <input type="radio" id="purpose-radio-1" value="Árajánlat" name="purpose" class="custom-control-input">
+                            <input required type="radio" id="purpose-radio-1" value="Árajánlat" name="purpose" class="custom-control-input">
                             <label class="custom-control-label" for="purpose-radio-1">Árajánlat</label>
                             </div>
                             <div class="custom-control custom-radio">
-                            <input type="radio" id="purpose-radio-2" value="Érdeklődés" name="purpose" class="custom-control-input">
+                            <input type="radio" id="purpose-radio-2" value="Érdeklődés" name="purpose" required class="custom-control-input">
                             <label class="custom-control-label" for="purpose-radio-2">Érdeklődés</label>
                           </div>
                         
                         <div class="custom-control custom-checkbox" style="margin: 20px 0 20px 0;">
-                            <input type="checkbox" class="custom-control-input" id="privacy">
+                            <input type="checkbox" required class="custom-control-input" id="privacy">
                             <label class="custom-control-label" for="privacy">Elfogadom az adatvédelmi nyiltakozatot</label>
                           </div>
                         
