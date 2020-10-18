@@ -45,3 +45,21 @@ function search() {
         }
     }
 }
+
+function searchMobile() {
+    let searchBox = document.getElementById("searchBoxMobile");
+    let menuItems = document.getElementsByClassName("mobile-nav-bar-menu-item");
+
+    if (searchBox.style.display === "none") {
+        searchBox.style.display = "inline";
+        for (let i = 0; i < menuItems.length; i++) {
+            menuItems[i].style.display = "none"; 
+        }
+    }
+    else {
+        searchBox.style.display = "none";
+        for (let i = 0; i < menuItems.length; i++) {
+            menuItems[i].style.display = "inline"; 
+        }
+    }
+}
