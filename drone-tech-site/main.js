@@ -9,7 +9,6 @@ function emailValidator(){
     else {
         emailWarning.style.display = "block";
     }
-    console.log(email);
 }
 
 document.getElementById("email-input").addEventListener("input", emailValidator);
@@ -27,3 +26,22 @@ function telValidator() {
 }
 
 document.getElementById("tel-input").addEventListener("input", telValidator);
+
+function search() {
+    let searchBox = document.getElementById("searchBox");
+    let menuItems = document.getElementsByClassName("menu-item");
+    
+    if (searchBox.style.display === "none") {
+        searchBox.style.display = "inline";
+        for (let i = 0; i < menuItems.length; i++) {
+            menuItems[i].style.display = "none";
+        }
+    }
+
+    else {
+        searchBox.style.display = "none";
+        for (let i = 0; i < menuItems.length; i++) {
+            menuItems[i].style.display = "inline";
+        }
+    }
+}

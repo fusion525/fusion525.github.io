@@ -12,7 +12,7 @@ header {
     font-family: oxygen, sans-serif;
     font-weight: 700;
     font-style: normal;
-    color: rgb(14, 35, 158);
+    color: rgb(111, 124, 197);
     font-size: 30px;
     text-decoration: none;
 
@@ -93,15 +93,14 @@ nav {
 nav {
   padding: 20px;
 }
+
+nav li {
+  display: inline;
+}
 .menu-item {
     display: inline;
     padding: 5px;
     font-weight: 500;
-}
-
-.menu-item button {
-    border: none;
-    background: none;
 }
 
 .menu-item button:hover {
@@ -300,4 +299,11 @@ textarea {
 
 .card-holder {
   margin: 20px 0 20px 0;
+}
+
+#searchButton {
+  display: inline;
+  background: none;
+  border: none;
+  padding: 5px;
 }

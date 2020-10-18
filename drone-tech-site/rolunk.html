@@ -14,27 +14,29 @@
     <header>
 
         <div class="overlay"></div>
-            <img src="img/cover-photo.jpg" alt="A weboldal borítóképe, egy 4 rotoros szürke drón homályos háttér előtt repül.">
+          <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
+            <source src="video/site-cover-video.mp4" type="video/mp4">
+          </video>
+          
         <nav>
           <a id="site-logo" href="index.html">DroneTech</a>
           <ul class="nav-bar">
             <li class="menu-item"><a href="szolgaltatasok.html">Szolgáltatások</a></li>
             <li class="menu-item"><a href="rolunk.html">Rólunk</a></li>
             <li class="menu-item"><a href="kapcsolat.html">Kapcsolat</a></li>
-            <li class="menu-item">
-                <button type="button" class="menu-item">
-                    <svg width="20px" height="20px" viewBox="0 0 16 16" class="bi bi-search" fill="white" xmlns="http://www.w3.org/2000/svg">
-                    <path fill-rule="evenodd" d="M10.442 10.442a1 1 0 0 1 1.415 0l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1 1 0 0 1 0-1.415z"></path>
-                    <path fill-rule="evenodd" d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zM13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z"></path>
-                    </svg>
-                </button>
+            <li id="searchBox" style="display: none;"><input placeholder="Keresés ..." type="text"></li>
+            <li>
+              <button type="button" id="searchButton" onclick="search()">
+              <svg width="20px" height="20px" viewBox="0 0 16 16" class="bi bi-search" fill="white" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" d="M10.442 10.442a1 1 0 0 1 1.415 0l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1 1 0 0 1 0-1.415z"></path>
+              <path fill-rule="evenodd" d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zM13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z"></path>
+              </svg>
+              </button>
             </li>
-        </ul>
+          </ul>
         </nav>
-
-        <h1>Rólunk</h1>
-
-    </header>
+      
+      </header>
 
     <main>
         <div class="container">
@@ -182,5 +184,10 @@
           </li>
         </ul>
       </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <script src="main.js"></script>
 </body>
 </html>
