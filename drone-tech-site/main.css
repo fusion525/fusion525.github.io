@@ -81,7 +81,7 @@ header {
 }
 
 .menu-item:hover {
-  background-color: rgba(209, 199, 199, 0.671);
+  text-decoration: underline;
 }
 
 @media screen and (min-width: 770px) {
@@ -306,4 +306,8 @@ textarea {
   background: none;
   border: none;
   padding: 5px;
+}
+
+#searchButton:hover {
+  border-bottom: white solid 2px;
 }
