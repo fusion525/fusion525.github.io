@@ -50,11 +50,13 @@ header {
 
   header h1 {
     position: absolute;
-    bottom: 150px;
+    bottom: 5%;
     margin-left: 2.5%;
     color: white;
     padding: 10px;
   }
+
+
   header .container {
     position: relative;
     z-index: 2;
@@ -121,6 +123,14 @@ main {
     border-radius: 5px;
     transform: translate( 0px, -100px);
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+header h1 {
+  position: absolute;
+  bottom: 20%;
+  margin-left: 2.5%;
+  color: white;
+  padding: 10px;
 }
 
 body {
@@ -227,20 +237,17 @@ textarea {
 
 .mobile-nav-bar {
   width: 100%;
-  height: 8vh;
+  height: 20%;
   background-color: rgb(49, 49, 233);
   bottom: 0;
   position: sticky;
   position: -webkit-sticky;
-  z-index: 101;
-  text-decoration: none;
-  box-sizing: border-box;
+  z-index: 2;
 }
 
 .mobile-nav-bar li {
   display: inline;
   color: white;
-  padding: 5px;
   
 }
 
@@ -251,17 +258,18 @@ textarea {
 .mobile-nav-bar ul {
   color: white;
   text-decoration: none;
-  padding: 1vh;
 }
 
 .mobile-nav-bar a {
   text-decoration: none;
   color: white;
+  padding: 5px;
 }
 
 .mobile-nav-bar button {
   background: none;
   border: none;
+  padding: 5px;
 }
 
 @media screen and (max-width: 770px) {
@@ -305,7 +313,6 @@ textarea {
   display: inline;
   background: none;
   border: none;
-  padding: 5px;
 }
 
 #searchButton:hover {
