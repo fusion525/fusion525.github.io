@@ -244,6 +244,7 @@ textarea {
   height: 55px;
   background-color: rgb(49, 49, 233);
   font-size: 19px;
+  font-weight: 600;
 }
 
 .mobile-nav-bar li {
