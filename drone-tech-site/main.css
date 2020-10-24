@@ -161,10 +161,6 @@ body {
   margin: 30px;
 }
 
-.social-button img:hover {
-  background-color: rgba(235, 227, 227, 0.699);
-}
-
 hr {
   margin: 50px 100px 10px 100px;
   border: 1px solid black; 
@@ -173,6 +169,10 @@ hr {
 .social-button {
   margin-bottom: 50px;
   padding: 10px;
+}
+
+.social-button a :hover {
+  transform: scale(1.2);
 }
 
 .services {
