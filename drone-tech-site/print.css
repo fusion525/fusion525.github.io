@@ -179,6 +179,7 @@ hr {
 .social-button {
   margin-bottom: 50px;
   padding: 10px;
+  display: none;
 }
 
 .social-button a :hover {
@@ -339,3 +340,4 @@ a {
 .sketchfab-embed-wrapper {
     display: none;
 }
+
