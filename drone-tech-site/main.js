@@ -63,3 +63,11 @@ function searchMobile() {
         }
     }
 }
+
+function toggleDarkMode() {
+    document.documentElement.classList.toggle('dark-mode');
+
+    document.querySelectorAll('.inverted').forEach((result) => {
+        result.classList.toggle('invert');
+    })
+}

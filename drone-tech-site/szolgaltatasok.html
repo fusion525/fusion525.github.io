@@ -15,9 +15,9 @@
     <header>
 
         <div class="overlay"></div>
-          <img src="img/cover-photo.jpg" alt="Egy négyrotoros szürke drón repül elmosódott háttér előtt">
+          <img class="inverted" src="img/cover-photo.jpg" alt="Egy négyrotoros szürke drón repül elmosódott háttér előtt">
           <h1>Szolgáltatások</h1>
-        <nav>
+        <nav class="inverted">
           <a id="site-logo" href="index.html">DroneTech</a>
           <ul class="nav-bar">
             <li class="menu-item"><a href="szolgaltatasok.html">Szolgáltatások</a></li>
@@ -25,12 +25,11 @@
             <li class="menu-item"><a href="kapcsolat.html">Kapcsolat</a></li>
             <li id="searchBox" style="display: none;"><input placeholder="Keresés ..." type="text"></li>
             <li>
-              <button type="button" id="searchButton" onclick="search()">
-              <svg width="20px" height="20px" viewBox="0 0 16 16" class="bi bi-search" fill="white" xmlns="http://www.w3.org/2000/svg">
-              <path fill-rule="evenodd" d="M10.442 10.442a1 1 0 0 1 1.415 0l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1 1 0 0 1 0-1.415z"></path>
-              <path fill-rule="evenodd" d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zM13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z"></path>
-              </svg>
-              </button>
+                <button type="button" id="searchButton" onclick="toggleDarkMode()">
+                    <svg width="1.2em" height="1.2em" viewBox="0 0 16 16" class="bi bi-moon" fill="white" xmlns="http://www.w3.org/2000/svg">
+                      <path fill-rule="evenodd" d="M14.53 10.53a7 7 0 0 1-9.058-9.058A7.003 7.003 0 0 0 8 15a7.002 7.002 0 0 0 6.53-4.47z"/>
+                    </svg>
+                </button>
             </li>
           </ul>
         </nav>
@@ -43,7 +42,9 @@
             <div class="row">
                 <div class="col-sm">
                     <div class="services">
-                        <a href="img/szolgaltats-1-cover.jpg"><img src="img/szolgaltats-1-cover.jpg" alt="Egy 4 rotoros nagyobb drón az alján egy kamerával, egy utcán áll."></a>
+                        <a href="img/szolgaltats-1-cover.jpg">
+                            <img class="inverted" src="img/szolgaltats-1-cover.jpg" alt="Egy 4 rotoros nagyobb drón az alján egy kamerával, egy utcán áll.">
+                        </a>
                         <div class="services-text-container">
                             <h4>Film felvételek </h4>
                             <p>Professzionális légi film készítés, bármilyen körülmények között.</p>
@@ -52,7 +53,9 @@
                 </div>
                 <div class="col-sm">
                     <div class="services">
-                        <a href="img/szolgaltatas-2-cover.jpg"><img src="img/szolgaltatas-2-cover.jpg" alt="Egy bányáról készült kép felülnézetből. A képen egy markoló homokot pakol egy teherautóra."></a>
+                        <a href="img/szolgaltatas-2-cover.jpg">
+                            <img class="inverted" src="img/szolgaltatas-2-cover.jpg" alt="Egy bányáról készült kép felülnézetből. A képen egy markoló homokot pakol egy teherautóra.">
+                        </a>
                         <div class="services-text-container">
                             <h4>Vállalti szolgáltatások</h4>
                             <p>Drón megoldások egy új generációs vállalkozáshoz.</p>
@@ -61,7 +64,9 @@
                 </div>
                 <div class="col-sm">
                     <div class="services">
-                        <a href="img/szolgaltatas-3-cover.jpg"><img src="img/szolgaltatas-3-cover.jpg" alt="Egy termőföld felülről fotózva. A képen egy kombájn épp aratja a termést."></a>
+                        <a href="img/szolgaltatas-3-cover.jpg">
+                            <img class="inverted" src="img/szolgaltatas-3-cover.jpg" alt="Egy termőföld felülről fotózva. A képen egy kombájn épp aratja a termést.">
+                        </a>
                         <div class="services-text-container">
                             <h4>Mezőgazdaság</h4>
                             <p>Hatékony és intelligens mezőgazdasági megoldások.</p>
@@ -100,13 +105,13 @@
                 <div class="row">
                     <div class="col-sm social-button">
                         <a href="https://facebook.com" class="social-button">
-                            <img src="https://img.icons8.com/color/48/000000/facebook-new.png" alt="facebook logó egy fehér F betű kék háttér előtt"/>
+                            <img class="inverted" src="https://img.icons8.com/color/48/000000/facebook-new.png" alt="facebook logó egy fehér F betű kék háttér előtt"/>
                         </a>
                         <a href="https://instagram.com" class="social-button">
-                            <img src="https://img.icons8.com/fluent/48/000000/instagram-new.png" alt="instagram ikon, narancssárga háttér előtt egy fehér kamera rajza."/>
+                            <img class="inverted" src="https://img.icons8.com/fluent/48/000000/instagram-new.png" alt="instagram ikon, narancssárga háttér előtt egy fehér kamera rajza."/>
                         </a>
                         <a href="https://linkedin.com" class="social-button">
-                            <img src="https://img.icons8.com/fluent/48/000000/linkedin.png" alt="LinkedIn közösségi média ikonja. Kép háttér előtt egy fehér i és betű."/>
+                            <img class="inverted" src="https://img.icons8.com/fluent/48/000000/linkedin.png" alt="LinkedIn közösségi média ikonja. Kép háttér előtt egy fehér i és betű."/>
                         </a>
                     </div>
                 </div>
@@ -125,11 +130,10 @@
               <li class="mobile-nav-bar-menu-item"><a href="kapcsolat.html">Kapcsolat</a></li>
               <li id="searchBoxMobile" style="display: none;"><input type="text" placeholder="Keresés ..."></li>
               <li>
-                <button type="button" name="keresés" id="searchButtonMobile" onclick="searchMobile()">
-                  <svg width="20px" height="20px" viewBox="0 0 16 16" class="bi bi-search" fill="white" xmlns="http://www.w3.org/2000/svg">
-                  <path fill-rule="evenodd" d="M10.442 10.442a1 1 0 0 1 1.415 0l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1 1 0 0 1 0-1.415z"></path>
-                  <path fill-rule="evenodd" d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zM13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z"></path>
-                  </svg>
+                <button type="button" id="searchButton" onclick="toggleDarkMode()">
+                    <svg width="1.2em" height="1.2em" viewBox="0 0 16 16" class="bi bi-moon" fill="white" xmlns="http://www.w3.org/2000/svg">
+                      <path fill-rule="evenodd" d="M14.53 10.53a7 7 0 0 1-9.058-9.058A7.003 7.003 0 0 0 8 15a7.002 7.002 0 0 0 6.53-4.47z"/>
+                    </svg>
                 </button>
               </li>
             </ul>

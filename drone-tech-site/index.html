@@ -14,7 +14,7 @@
   <header>
 
     <div class="overlay"></div>
-      <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
+      <video class="inverted" playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
         <source src="video/site-cover-video.mp4" type="video/mp4">
       </video>
 
@@ -23,7 +23,7 @@
         <path fill-rule="evenodd" d="M8 4a.5.5 0 0 1 .5.5v5.793l2.146-2.147a.5.5 0 0 1 .708.708l-3 3a.5.5 0 0 1-.708 0l-3-3a.5.5 0 1 1 .708-.708L7.5 10.293V4.5A.5.5 0 0 1 8 4z"/>
       </svg></a>
       
-    <nav>
+    <nav class="inverted">
       <a id="site-logo" href="index.html">DroneTech</a>
       <ul class="nav-bar">
         <li class="menu-item"><a href="szolgaltatasok.html">Szolgáltatások</a></li>
@@ -31,11 +31,10 @@
         <li class="menu-item"><a href="kapcsolat.html">Kapcsolat</a></li>
         <li id="searchBox" style="display: none;"><input placeholder="Keresés ..." type="text"></li>
         <li>
-          <button type="button" id="searchButton" onclick="search()">
-          <svg width="20px" height="20px" viewBox="0 0 16 16" class="bi bi-search" fill="white" xmlns="http://www.w3.org/2000/svg">
-          <path fill-rule="evenodd" d="M10.442 10.442a1 1 0 0 1 1.415 0l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1 1 0 0 1 0-1.415z"></path>
-          <path fill-rule="evenodd" d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zM13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z"></path>
-          </svg>
+          <button type="button" id="searchButton" onclick="toggleDarkMode()">
+            <svg width="1.2em" height="1.2em" viewBox="0 0 16 16" class="bi bi-moon" fill="white" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" d="M14.53 10.53a7 7 0 0 1-9.058-9.058A7.003 7.003 0 0 0 8 15a7.002 7.002 0 0 0 6.53-4.47z"/>
+            </svg>
           </button>
         </li>
       </ul>
@@ -49,7 +48,7 @@
     <div class="container features">
       <div class="row">
         <div class="col-sm features">
-          <img src="img/feautre-1.jpg" alt="3D térlépezés szolgáltatás, egy utca és házak madártávlatból">
+          <img class="inverted" src="img/feautre-1.jpg" alt="3D térlépezés szolgáltatás, egy utca és házak madártávlatból">
           <div class="features-text-container">
             <h6>3D feltérképezés</h6>
             <p>
@@ -58,7 +57,7 @@
           </div>
         </div>
         <div class="col-sm features">
-          <img src="img/feature-2.jpg" alt="Távvezeték felügyelet drónnal. Egy drón szerepel a képen, ahogy egy távvezeték tartó oszlop mellett repül">
+          <img class="inverted" src="img/feature-2.jpg" alt="Távvezeték felügyelet drónnal. Egy drón szerepel a képen, ahogy egy távvezeték tartó oszlop mellett repül">
           <div class="features-text-container">
             <h6>Távvezeték felügyelet</h6>
             <p>
@@ -67,7 +66,7 @@
           </div>
         </div>
         <div class="col-sm features">
-          <img src="img/feature-3.jpg" alt="Egy tengeri olajfúrótorony szerepel a képen">
+          <img class="inverted" src="img/feature-3.jpg" alt="Egy tengeri olajfúrótorony szerepel a képen">
           <div class="features-text-container">
             <h6>Felfedezés és építkezés irányítás</h6>
             <p>
@@ -98,7 +97,7 @@
         
         <div class="col-sm reference">
           
-          <img src="img/referencia-kep.jpg" alt="A képen egy kisebb drón szerepel, amit egy férfi a kezében tart a folyóparton">
+          <img class="inverted" src="img/referencia-kep.jpg" alt="A képen egy kisebb drón szerepel, amit egy férfi a kezében tart a folyóparton">
           <figure><a href="https://www.pexels.com/@thelazyartist" target="_blank">The Lazy Artist Galery</a></figure>
         </div>
       </div>
@@ -108,12 +107,13 @@
     <div class="container">
       <div class="row">
           <div class="col-sm social-button">
-            <a href="https://facebook.com" class="social-button"><img src="https://img.icons8.com/color/48/000000/facebook-new.png" alt="facebook logó egy fehér F betű kék háttér előtt"/></a>
+            <a href="https://facebook.com" class="social-button">
+              <img class="inverted" src="https://img.icons8.com/color/48/000000/facebook-new.png" alt="facebook logó egy fehér F betű kék háttér előtt"/></a>
             <a href="https://instagram.com" class="social-button">
-              <img src="https://img.icons8.com/fluent/48/000000/instagram-new.png" alt="instagram ikon, narancssárga háttér előtt egy fehér kamera rajza."/>
+              <img class="inverted" src="https://img.icons8.com/fluent/48/000000/instagram-new.png" alt="instagram ikon, narancssárga háttér előtt egy fehér kamera rajza."/>
             </a>
             <a href="https://linkedin.com" class="social-button">
-              <img src="https://img.icons8.com/fluent/48/000000/linkedin.png" alt="LinkedIn közösségi média ikonja. Kép háttér előtt egy fehér i és betű."/>
+              <img class="inverted" src="https://img.icons8.com/fluent/48/000000/linkedin.png" alt="LinkedIn közösségi média ikonja. Kép háttér előtt egy fehér i és betű."/>
             </a>
           </div>
         </div>
@@ -130,10 +130,9 @@
         <li class="mobile-nav-bar-menu-item"><a href="kapcsolat.html">Kapcsolat</a></li>
         <li id="searchBoxMobile" style="display: none;"><input type="text" placeholder="Keresés ..."></li>
         <li>
-          <button type="button" name="keresés" id="searchButtonMobile" onclick="searchMobile()">
-            <svg width="20px" height="20px" viewBox="0 0 16 16" class="bi bi-search" fill="white" xmlns="http://www.w3.org/2000/svg">
-            <path fill-rule="evenodd" d="M10.442 10.442a1 1 0 0 1 1.415 0l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1 1 0 0 1 0-1.415z"></path>
-            <path fill-rule="evenodd" d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zM13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z"></path>
+          <button type="button" id="searchButton" onclick="toggleDarkMode()">
+            <svg width="1.2em" height="1.2em" viewBox="0 0 16 16" class="bi bi-moon" fill="white" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" d="M14.53 10.53a7 7 0 0 1-9.058-9.058A7.003 7.003 0 0 0 8 15a7.002 7.002 0 0 0 6.53-4.47z"/>
             </svg>
           </button>
         </li>

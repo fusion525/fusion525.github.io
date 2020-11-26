@@ -15,10 +15,10 @@
     <header>
 
         <div class="overlay"></div>
-        <img src="img/cover-photo.jpg" alt="Egy négyrotoros szürke drón repül elmosódott háttér előtt">
+        <img class="inverted" src="img/cover-photo.jpg" alt="Egy négyrotoros szürke drón repül elmosódott háttér előtt">
         <h1>Rólunk</h1>
           
-        <nav>
+        <nav class="inverted">
           <a id="site-logo" href="index.html">DroneTech</a>
           <ul class="nav-bar">
             <li class="menu-item"><a href="szolgaltatasok.html">Szolgáltatások</a></li>
@@ -26,12 +26,11 @@
             <li class="menu-item"><a href="kapcsolat.html">Kapcsolat</a></li>
             <li id="searchBox" style="display: none;"><input placeholder="Keresés ..." type="text"></li>
             <li>
-              <button type="button" id="searchButton" onclick="search()">
-              <svg width="20px" height="20px" viewBox="0 0 16 16" class="bi bi-search" fill="white" xmlns="http://www.w3.org/2000/svg">
-              <path fill-rule="evenodd" d="M10.442 10.442a1 1 0 0 1 1.415 0l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1 1 0 0 1 0-1.415z"></path>
-              <path fill-rule="evenodd" d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zM13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z"></path>
-              </svg>
-              </button>
+                <button type="button" id="searchButton" onclick="toggleDarkMode()">
+                    <svg width="1.2em" height="1.2em" viewBox="0 0 16 16" class="bi bi-moon" fill="white" xmlns="http://www.w3.org/2000/svg">
+                      <path fill-rule="evenodd" d="M14.53 10.53a7 7 0 0 1-9.058-9.058A7.003 7.003 0 0 0 8 15a7.002 7.002 0 0 0 6.53-4.47z"/>
+                    </svg>
+                </button>
             </li>
           </ul>
         </nav>
@@ -52,6 +51,7 @@
                 </div> 
             </div>
         </section>
+        <hr>
         <div class="container">
             <h2 style="margin-bottom: 20px;">Drónjaink</h2>
             <div class="row">
@@ -79,7 +79,7 @@
                                         </ul>
                                     </td>
                                     <td>
-                                        <img src="img/agras-t15.png" width="210" height="150" alt="Egy 8 rotoros drón, fehér háttér előtt áll.">
+                                        <img class="inverted" src="img/agras-t15.png" width="210" height="150" alt="Egy 8 rotoros drón, fehér háttér előtt áll.">
                                     </td> 
                                 </tr>
                                 <tr>
@@ -92,7 +92,7 @@
                                         </ul>
                                     </td>
                                     <td>
-                                        <img src="img/inspire-2.png" width="210" height="150" alt="Egy 4 rotoros szürke drón, fehér háttér előtt áll.">
+                                        <img class="inverted" src="img/inspire-2.png" width="210" height="150" alt="Egy 4 rotoros szürke drón, fehér háttér előtt áll.">
                                     </td> 
                                 </tr>
                                 <tr>
@@ -107,7 +107,7 @@
                                         </ul>
                                     </td>
                                     <td>
-                                        <img src="img/matrice-300-rtk.png" width="210" height="150" alt="Egy 8 rotoros sötét szürke drón, fehér háttér előtt áll.">
+                                        <img class="inverted" src="img/matrice-300-rtk.png" width="210" height="150" alt="Egy 8 rotoros sötét szürke drón, fehér háttér előtt áll.">
                                     </td> 
                                 </tr>
                             </tbody>  
@@ -122,7 +122,7 @@
             <div class="row">
                 <div class="col-sm card-holder">
                     <div class="card" style="width: 100%;">
-                        <img src="img/ivandi-gabor.jpg" class="card-img-top" alt="Ivándi Gábor portjéja, 20-as évei végén járó szemüvegek, borostás, rövid hajú férfi">
+                        <img class="inverted" src="img/ivandi-gabor.jpg" class="card-img-top" alt="Ivándi Gábor portjéja, 20-as évei végén járó szemüvegek, borostás, rövid hajú férfi">
                         <figure class="card-body">
                           <p class="card-text">Ivándi Gábor</p>
                         </figure>
@@ -130,7 +130,7 @@
                 </div>
                 <div class="col-sm card-holder">
                     <div class="card" style="width: 100%;">
-                        <img src="img/tasnadi-domotor.jpg" class="card-img-top" alt="Dömötör Máté portjéja, 20-as évei végén, borostás, rövid barna hajú férfi">
+                        <img class="inverted" src="img/tasnadi-domotor.jpg" class="card-img-top" alt="Dömötör Máté portjéja, 20-as évei végén, borostás, rövid barna hajú férfi">
                         <figure class="card-body">
                           <p class="card-text">Tasnádi Dömötör</p>
                         </figure>
@@ -138,7 +138,7 @@
                 </div>
                 <div class="col-sm card-holder">
                     <div class="card" style="width: 100%;">
-                        <img src="img/cserko-mate.jpg" class="card-img-top" alt="Cserkó Máté portjéja, 20-as évei végén járó, borostás, hosszú barna hajú férfi">
+                        <img class="inverted" src="img/cserko-mate.jpg" class="card-img-top" alt="Cserkó Máté portjéja, 20-as évei végén járó, borostás, hosszú barna hajú férfi">
                         <figure class="card-body">
                           <p class="card-text">Cserkó Máté</p>
                         </figure>
@@ -151,16 +151,16 @@
             <h2>Partnereink</h2>
             <div class="row">
                 <div class="col-sm partner">
-                    <a target="_blank" href="https://shell.com"><img src="img/shell-logo.png" width="100" height="100" alt="Shell, Holland olajipari vállalat logója. A képen egy rajzolt sárga színű kagyló forma van."></a>
+                    <a target="_blank" href="https://shell.com"><img class="inverted" src="img/shell-logo.png" width="100" height="100" alt="Shell, Holland olajipari vállalat logója. A képen egy rajzolt sárga színű kagyló forma van."></a>
                 </div>
                 <div class="col-sm partner">
-                    <a target="_blank" href="https://amazon.com"><img src="img/amazon-logo.png" width="100" height="100" alt="Az Amazon multinacionális vállalat logója. A képen fekete kis betűvel A betű szerepel alatta egy narancs sárga nyíllal."></a>
+                    <a target="_blank" href="https://amazon.com"><img class="inverted" src="img/amazon-logo.png" width="100" height="100" alt="Az Amazon multinacionális vállalat logója. A képen fekete kis betűvel A betű szerepel alatta egy narancs sárga nyíllal."></a>
                 </div>
                 <div class="col-sm partner">
-                    <a target="_blank" href="https://mvm.hu"><img src="img/mvm-logo.png" width="100" height="100" alt="A magyar villamos művek logója. A képen egy kék négyzet van, benne fehérrel, a group felirat, mellette pedig egy sárga négyzetben, hogy M V M"></a>
+                    <a target="_blank" href="https://mvm.hu"><img class="inverted" src="img/mvm-logo.png" width="100" height="100" alt="A magyar villamos művek logója. A képen egy kék négyzet van, benne fehérrel, a group felirat, mellette pedig egy sárga négyzetben, hogy M V M"></a>
                 </div>
                 <div class="col-sm partner">
-                    <a target="_blank" href="https://telekom.hu"><img src="img/telekom-logo.png" width="100" height="100" alt="A magyar telekom lógója. A képen magenta alapon fehérrel egy talpas szárú T betű található, ami melett balra egy, jobbra pedig 3 kis fehér négyzet helyezkedik el."></a>
+                    <a target="_blank" href="https://telekom.hu"><img class="inverted" src="img/telekom-logo.png" width="100" height="100" alt="A magyar telekom lógója. A képen magenta alapon fehérrel egy talpas szárú T betű található, ami melett balra egy, jobbra pedig 3 kis fehér négyzet helyezkedik el."></a>
                 </div>
             </div>
         </aside>
@@ -177,11 +177,10 @@
           <li class="mobile-nav-bar-menu-item"><a href="kapcsolat.html">Kapcsolat</a></li>
           <li id="searchBoxMobile" style="display: none;"><input type="text" placeholder="Keresés ..."></li>
           <li>
-            <button type="button" name="keresés" id="searchButtonMobile" onclick="searchMobile()">
-              <svg width="20px" height="20px" viewBox="0 0 16 16" class="bi bi-search" fill="white" xmlns="http://www.w3.org/2000/svg">
-              <path fill-rule="evenodd" d="M10.442 10.442a1 1 0 0 1 1.415 0l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1 1 0 0 1 0-1.415z"></path>
-              <path fill-rule="evenodd" d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zM13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z"></path>
-              </svg>
+            <button type="button" id="searchButton" onclick="toggleDarkMode()">
+                <svg width="1.2em" height="1.2em" viewBox="0 0 16 16" class="bi bi-moon" fill="white" xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd" d="M14.53 10.53a7 7 0 0 1-9.058-9.058A7.003 7.003 0 0 0 8 15a7.002 7.002 0 0 0 6.53-4.47z"/>
+                </svg>
             </button>
           </li>
         </ul>
