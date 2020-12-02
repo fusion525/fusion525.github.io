@@ -190,6 +190,10 @@ hr {
   padding: 10px;
 }
 
+.social-button a {
+  text-decoration: none;
+}
+
 .social-button a :hover {
   transform: scale(1.2);
 }
