@@ -330,6 +330,13 @@ textarea {
   border: none;
 }
 
+#searchButton-mobile {
+  display: inline;
+  background: none;
+  border: none;
+  background-color: rgb(49, 49, 233);
+}
+
 #searchButton:hover {
   border-bottom: white solid 2px;
 }
