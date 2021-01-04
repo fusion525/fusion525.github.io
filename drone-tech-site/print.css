@@ -324,20 +324,20 @@ textarea {
   margin: 20px 0 20px 0;
 }
 
-#searchButton {
+#darkModeButton {
   display: inline;
   background: none;
   border: none;
 }
 
-#searchButton-mobile {
+#darkModeButton-mobile {
   display: inline;
   background: none;
   border: none;
   background-color: rgb(49, 49, 233);
 }
 
-#searchButton:hover {
+#darkModeButton:hover {
   border-bottom: white solid 2px;
 }
 

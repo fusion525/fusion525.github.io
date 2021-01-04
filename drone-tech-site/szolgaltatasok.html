@@ -12,6 +12,8 @@
 
 <body>
 
+    <a class="outofbound" href="#title">Ugrás a tartalomra</a>
+
     <header>
 
         <div class="overlay"></div>
@@ -20,12 +22,11 @@
         <nav class="inverted">
           <a id="site-logo" href="index.html">DroneTech</a>
           <ul class="nav-bar">
-            <li class="menu-item"><a href="szolgaltatasok.html">Szolgáltatások</a></li>
+            <li id="actual" class="menu-item"><a href="szolgaltatasok.html">Szolgáltatások</a></li>
             <li class="menu-item"><a href="rolunk.html">Rólunk</a></li>
             <li class="menu-item"><a href="kapcsolat.html">Kapcsolat</a></li>
-            <li class="menu-item"><a href="#title">Ugrás a tartalomra</a></li>
             <li>
-                <button type="button" id="searchButton" onclick="toggleDarkMode()">
+                <button type="button" id="darkModeButton" onclick="toggleDarkMode()">
                     <svg width="1.2em" height="1.2em" viewBox="0 0 16 16" class="bi bi-moon" fill="white" xmlns="http://www.w3.org/2000/svg">
                       <path fill-rule="evenodd" d="M14.53 10.53a7 7 0 0 1-9.058-9.058A7.003 7.003 0 0 0 8 15a7.002 7.002 0 0 0 6.53-4.47z"/>
                     </svg>
@@ -37,6 +38,8 @@
       </header>
 
       <main id="title">
+
+            <a href="index.html">Kezdőlap</a> > <a href="szolgaltatasok.html">szolgaltatasok</a>
 
           <section class="container">
             <div class="row">
@@ -127,9 +130,8 @@
               <li class="mobile-nav-bar-menu-item"><a href="szolgaltatasok.html">Szolgáltatások</a></li>
               <li class="mobile-nav-bar-menu-item"><a href="rolunk.html">Rólunk</a></li>
               <li class="mobile-nav-bar-menu-item"><a href="kapcsolat.html">Kapcsolat</a></li>
-              <li id="searchBoxMobile" style="display: none;"><input type="text" placeholder="Keresés ..."></li>
               <li>
-                <button type="button" id="searchButton-mobile" onclick="toggleDarkMode()">
+                <button type="button" id="darkModeButton-mobile" onclick="toggleDarkMode()">
                     <svg width="1.2em" height="1.2em" viewBox="0 0 16 16" class="bi bi-moon" fill="white" xmlns="http://www.w3.org/2000/svg">
                       <path fill-rule="evenodd" d="M14.53 10.53a7 7 0 0 1-9.058-9.058A7.003 7.003 0 0 0 8 15a7.002 7.002 0 0 0 6.53-4.47z"/>
                     </svg>

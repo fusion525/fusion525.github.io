@@ -12,12 +12,21 @@ header {
     font-family: oxygen, sans-serif;
     font-weight: 700;
     font-style: normal;
-    color: rgb(69, 184, 212);
+    color: rgb(35, 68, 71);
     font-size: 180%;
     text-decoration: none;
 
   }
 
+  #outofbound {
+    position: absolute;
+    left: -9999px;
+  }
+
+  #outofbound {
+    position:static; 
+    background:white;
+  }
   header video {
     position: absolute;
     top: 50%;
@@ -334,21 +343,21 @@ textarea {
   margin: 20px 0 20px 0;
 }
 
-#searchButton {
+#darkModeButton {
   display: inline;
   background: none;
   border: none;
   background-color: rgb(49, 49, 233);
 }
 
-#searchButton-mobile {
+#darkModeButton-mobile {
   display: inline;
   background: none;
   border: none;
   background-color: rgb(49, 49, 233);
 }
 
-#searchButton:hover {
+#darkModeButton:hover {
   border-bottom: white solid 2px;
 }
 
@@ -362,4 +371,13 @@ a {
 
 .invert {
   filter: invert(1) hue-rotate(180deg);
+}
+
+video {
+  width: 450px;
+  height: 300px;
+}
+
+body a {
+  color: darkblue;
 }
