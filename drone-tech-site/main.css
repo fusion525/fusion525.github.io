@@ -18,12 +18,12 @@ header {
 
   }
 
-  #outofbound {
+  .outofbound {
     position: absolute;
     left: -9999px;
   }
 
-  #outofbound {
+  .outofbound:focus {
     position:static; 
     background:white;
   }

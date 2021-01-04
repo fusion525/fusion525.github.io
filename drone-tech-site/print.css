@@ -9,6 +9,10 @@ header {
     display: none;
   }
 
+  .site-map {
+    display: none;
+  }
+
   #site-logo {
     font-family: oxygen, sans-serif;
     font-weight: 700;
