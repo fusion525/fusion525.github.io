@@ -5,15 +5,70 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="index,follow">
+    <meta name="DC.title" content="Meta Clean Tartálymosó">
+    <meta name="description" content="Az élelmiszer szállító szerelvények lefejtő csöveinek tisztítása, töltött tartályok, illetve konténer fűtése, vegyi tisztítás, ügyfélváró, ingyenesen használható zuhanyozó és WC."/>
     <title>Meta-Clean Tartálymosó</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="shortcut icon" href="assets/img/meta-clean-logo@2x.webp" type="image/x-icon">
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "AutoWash",
+            "paymentAccepted": [
+                "HUF",
+                "EUR"
+            ],
+            "PaymentAccepted":[
+                "Cash",
+                "Credit Card"
+            ],
+            "image": [
+              "https://example.com/photos/1x1/photo.jpg",
+              "https://example.com/photos/4x3/photo.jpg",
+              "https://example.com/photos/16x9/photo.jpg"
+             ],
+             "logo": "https://example.org",
+            "name": "Meta-Clean Kft.",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "Méta utca 37-39",
+              "addressLocality": "Budapest",
+              "addressRegion": "Budapest",
+              "postalCode": "1194",
+              "addressCountry": "HU"
+            },
+            "geo": {
+              "@type": "GeoCoordinates",
+              "latitude": 47.42694209654584,
+              "longitude": 19.16149714171809
+            },
+            "url": "https://meta-clean.hu",
+            "telephone": "+3613470465",
+            "priceRange": "$",
+            "openingHoursSpecification": [
+              {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": [
+                  "Monday",
+                  "Tuesday",
+                  "Wednesday",
+                  "Thursday",
+                  "Friday",
+                  "Saturday",
+                  "Sunday"
+                ],
+                "opens": "00:00",
+                "closes": "24:00"
+              }
+            ]
+          }
+    </script>
 </head>
 
 <body>
-
     <header>
         <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
             <div class="container-fluid">
@@ -25,10 +80,11 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                     <div class="navbar-nav">
-                        <a class="nav-link active" href="#">Szolgáltatások</a>
-                        <a class="nav-link active" href="#">Képgaléria</a>
-                        <a class="nav-link active" href="#">Rólunk</a>
-                        <a class="nav-link active" href="#">Kapcsolat</a>
+                        <a class="nav-link active" href="index.html">Kezdőlap</a>
+                        <a class="nav-link" href="#">Szolgáltatások</a>
+                        <a class="nav-link" href="#">Képgaléria</a>
+                        <a class="nav-link" href="#">Rólunk</a>
+                        <a class="nav-link" href="#">Kapcsolat</a>
                     </div>
                 </div>
             </div>
@@ -113,19 +169,38 @@
         </div>
     </section>
     <section class="contact-info">
-        <div class="contact-title">
-            <h3>Elérhetőségeink</h3>
-        </div>
+        <h3>Elérhetőségeink</h3>
         <div class="contact-info-container">
             <div class="contact-description">
-                <p><b>Címünk</b></p>
+                <p>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="white" class="bi bi-map" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M15.817.113A.5.5 0 0 1 16 .5v14a.5.5 0 0 1-.402.49l-5 1a.502.502 0 0 1-.196 0L5.5 15.01l-4.902.98A.5.5 0 0 1 0 15.5v-14a.5.5 0 0 1 .402-.49l5-1a.5.5 0 0 1 .196 0L10.5.99l4.902-.98a.5.5 0 0 1 .415.103zM10 1.91l-4-.8v12.98l4 .8V1.91zm1 12.98 4-.8V1.11l-4 .8v12.98zm-6-.8V1.11l-4 .8v12.98l4-.8z"/>
+                    </svg>
+                    <b>Címünk</b>
+                </p>
                 <address>1194 Budapest, Méta u. 37-39.</address>
-                <p><b>Telefon</b></p>
+                <p>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="white" class="bi bi-telephone" viewBox="0 0 16 16">
+                        <path d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.568 17.568 0 0 0 4.168 6.608 17.569 17.569 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.678.678 0 0 0-.58-.122l-2.19.547a1.745 1.745 0 0 1-1.657-.459L5.482 8.062a1.745 1.745 0 0 1-.46-1.657l.548-2.19a.678.678 0 0 0-.122-.58L3.654 1.328zM1.884.511a1.745 1.745 0 0 1 2.612.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z"/>
+                    </svg>
+                    <b>Telefon</b>
+                </p>
                 <address><a href="tel:0613470465"></a>+36-1/347-0465</address>
-                <p><b>Mobil</b></p>
+                <p>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="white" class="bi bi-phone" viewBox="0 0 16 16">
+                        <path d="M11 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h6zM5 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H5z"/>
+                        <path d="M8 14a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/>
+                    </svg>
+                    <b>Mobil</b>
+                </p>
                 <address><a href="tel:06209568243"></a>+36-20/956-8243</address>
                 <p></p>
-                <p><b>E-mail</b></p>
+                <p>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="white" class="bi bi-envelope" viewBox="0 0 16 16">
+                        <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2zm13 2.383-4.758 2.855L15 11.114v-5.73zm-.034 6.878L9.271 8.82 8 9.583 6.728 8.82l-5.694 3.44A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.739zM1 11.114l4.758-2.876L1 5.383v5.73z"/>
+                    </svg>
+                    <b>E-mail</b>
+                </p>
                 <p><a href="mailto:info@meta-clean.hu">info@meta-clean.hu</a></p>
             </div>
             <div class="map">
