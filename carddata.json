@@ -1,0 +1,22 @@
+[
+    {
+        "pan": "5391232155831972",
+        "custId": "A1234567",
+        "custName": "Ivándi Gábor",
+        "custAddress": "2011 Budakalász Bem utca 10",
+        "postAddress": "2011 Budakalász Bem utca 10",
+        "idCard": "013421MA",
+        "phoneNumber": "06111111111",
+        "gender": "male"
+    },
+    {
+        "pan": "5555555555554444",
+        "custId": "B1234567",
+        "custName": "Szeghy Boglárka",
+        "custAddress": "1013 Budapest Kossuth utca 7",
+        "postAddress": "1013 Budapest Kossuth utca 7",
+        "idCard": "345632DE",
+        "phoneNumber": "06222222222",
+        "gender": "female"
+    }
+]
