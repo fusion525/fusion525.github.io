@@ -1,0 +1,1048 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>36 Hónapos Befektetési Ütemterv & Interaktív Portfólió (2026–2029) v2</title>
+  <style>
+    :root {
+      --bg: #0f172a;
+      --card: #1e293b;
+      --card-hover: #26354d;
+      --border: #334155;
+      --text: #f8fafc;
+      --muted: #94a3b8;
+      --accent: #38bdf8;
+      --green: #10b981;
+      --c1: #3b82f6; /* Stabil láb */
+      --c2: #10b981; /* Energetika */
+      --c3: #f59e0b; /* Big Tech & EV */
+      --c4: #8b5cf6; /* Félvezetők */
+      --c5: #ec4899; /* Űripar & AI */
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.5;
+      padding: 24px;
+    }
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+    }
+    header {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 24px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid var(--border);
+    }
+    h1 {
+      font-size: 1.65rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+    .subtitle {
+      color: var(--muted);
+      font-size: 0.95rem;
+      margin-top: 4px;
+    }
+    .storage-panel {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 12px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      padding: 12px 16px;
+      border-radius: 12px;
+    }
+    .status-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: rgba(16, 185, 129, 0.15);
+      color: #34d399;
+      border: 1px solid rgba(16, 185, 129, 0.35);
+    }
+    .status-badge.warn {
+      background: rgba(245, 158, 11, 0.15);
+      color: #fbbf24;
+      border-color: rgba(245, 158, 11, 0.35);
+    }
+    .action-btn {
+      background: rgba(56, 189, 248, 0.12);
+      color: var(--accent);
+      border: 1px solid rgba(56, 189, 248, 0.3);
+      padding: 6px 12px;
+      border-radius: 8px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.15s;
+    }
+    .action-btn:hover {
+      background: rgba(56, 189, 248, 0.25);
+    }
+    .action-btn.danger {
+      background: rgba(239, 68, 68, 0.12);
+      color: #f87171;
+      border-color: rgba(239, 68, 68, 0.3);
+    }
+    .action-btn.danger:hover {
+      background: rgba(239, 68, 68, 0.25);
+    }
+    .kpi-row {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+    .kpi-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 18px 20px;
+    }
+    .kpi-label {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--muted);
+      margin-bottom: 6px;
+    }
+    .kpi-val {
+      font-size: 1.45rem;
+      font-weight: 700;
+      color: var(--text);
+    }
+    .kpi-sub {
+      font-size: 0.82rem;
+      color: #34d399;
+      margin-top: 4px;
+    }
+    .progress-bar-wrap {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 16px 20px;
+      margin-bottom: 28px;
+    }
+    .progress-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 8px;
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+    .progress-track {
+      width: 100%;
+      height: 10px;
+      background: rgba(255, 255, 255, 0.08);
+      border-radius: 999px;
+      overflow: hidden;
+    }
+    .progress-fill {
+      height: 100%;
+      background: linear-gradient(90deg, #3b82f6, #10b981);
+      width: 0%;
+      transition: width 0.3s ease;
+    }
+    .top-grid {
+      display: grid;
+      grid-template-columns: 1.05fr 1.25fr;
+      gap: 24px;
+      margin-bottom: 28px;
+    }
+    @media (max-width: 960px) {
+      .top-grid { grid-template-columns: 1fr; }
+    }
+    .panel {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 24px;
+    }
+    .panel-title {
+      font-size: 1.15rem;
+      font-weight: 600;
+      margin-bottom: 6px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .panel-hint {
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin-bottom: 20px;
+    }
+    .chart-wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+    }
+    svg.donut {
+      width: 290px;
+      height: 290px;
+      overflow: visible;
+    }
+    .slice {
+      cursor: pointer;
+      transition: transform 0.22s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.2s;
+      transform-origin: 150px 150px;
+    }
+    .slice:hover {
+      transform: scale(1.04);
+    }
+    .slice.active {
+      transform: scale(1.07);
+      filter: drop-shadow(0 0 10px rgba(255,255,255,0.22));
+    }
+    .slice.dimmed {
+      opacity: 0.35;
+    }
+    .legend-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 8px;
+      width: 100%;
+      margin-top: 18px;
+    }
+    .legend-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 14px;
+      border-radius: 10px;
+      background: rgba(15, 23, 42, 0.55);
+      border: 1px solid transparent;
+      cursor: pointer;
+      transition: all 0.15s;
+    }
+    .legend-item:hover, .legend-item.active {
+      background: var(--card-hover);
+      border-color: var(--accent);
+    }
+    .legend-left {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.9rem;
+      font-weight: 500;
+    }
+    .dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 4px;
+      flex-shrink: 0;
+    }
+    .legend-right {
+      text-align: right;
+      font-size: 0.9rem;
+    }
+    .legend-pct {
+      color: var(--muted);
+      font-size: 0.8rem;
+      margin-left: 6px;
+    }
+    .reset-btn {
+      background: rgba(56, 189, 248, 0.15);
+      color: var(--accent);
+      border: 1px solid rgba(56, 189, 248, 0.35);
+      padding: 5px 12px;
+      border-radius: 8px;
+      font-size: 0.8rem;
+      cursor: pointer;
+      display: none;
+    }
+    .reset-btn.visible {
+      display: inline-block;
+    }
+    .holdings-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .holding-card {
+      background: rgba(15, 23, 42, 0.6);
+      border: 1px solid var(--border);
+      border-left-width: 4px;
+      border-radius: 10px;
+      padding: 14px 16px;
+      transition: transform 0.15s;
+    }
+    .holding-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 6px;
+    }
+    .ticker-badge {
+      background: rgba(255,255,255,0.08);
+      padding: 2px 8px;
+      border-radius: 5px;
+      font-family: monospace;
+      font-weight: 700;
+      font-size: 0.82rem;
+      margin-right: 8px;
+      color: var(--accent);
+    }
+    .holding-name {
+      font-weight: 600;
+      font-size: 0.94rem;
+    }
+    .holding-val {
+      font-weight: 700;
+      font-size: 0.96rem;
+    }
+    .bar-bg {
+      width: 100%;
+      height: 6px;
+      background: rgba(255,255,255,0.07);
+      border-radius: 3px;
+      overflow: hidden;
+      margin-top: 6px;
+    }
+    .bar-fill {
+      height: 100%;
+      border-radius: 3px;
+      transition: width 0.35s ease;
+    }
+    .holding-meta {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.78rem;
+      color: var(--muted);
+      margin-top: 6px;
+    }
+    .filter-bar {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 18px;
+    }
+    .tabs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .tab-btn {
+      background: rgba(15, 23, 42, 0.6);
+      color: var(--muted);
+      border: 1px solid var(--border);
+      padding: 8px 16px;
+      border-radius: 10px;
+      font-size: 0.88rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.15s;
+    }
+    .tab-btn:hover {
+      color: var(--text);
+      border-color: var(--muted);
+    }
+    .tab-btn.active {
+      background: var(--accent);
+      color: #0f172a;
+      border-color: var(--accent);
+    }
+    .table-wrap {
+      overflow-x: auto;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.9rem;
+    }
+    th, td {
+      padding: 12px 14px;
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+    }
+    th {
+      background: rgba(15, 23, 42, 0.8);
+      color: var(--muted);
+      font-weight: 600;
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+    tr.row-item {
+      cursor: pointer;
+      transition: background 0.15s;
+    }
+    tr.row-item:hover {
+      background: rgba(56, 189, 248, 0.06);
+    }
+    tr.row-item.completed {
+      background: rgba(16, 185, 129, 0.06);
+      opacity: 0.6;
+    }
+    tr.row-item.completed td.strike {
+      text-decoration: line-through;
+      color: var(--muted);
+    }
+    .badge-buy {
+      background: rgba(16, 185, 129, 0.18);
+      color: #34d399;
+      border: 1px solid rgba(16, 185, 129, 0.35);
+      padding: 2px 8px;
+      border-radius: 6px;
+      font-size: 0.78rem;
+      font-weight: 600;
+    }
+    .badge-save {
+      background: rgba(148, 163, 184, 0.15);
+      color: #cbd5e1;
+      padding: 2px 8px;
+      border-radius: 6px;
+      font-size: 0.78rem;
+    }
+    .timestamp-tag {
+      display: block;
+      font-size: 0.72rem;
+      color: #34d399;
+      margin-top: 2px;
+      font-weight: 500;
+    }
+    input[type="checkbox"] {
+      width: 18px;
+      height: 18px;
+      accent-color: var(--green);
+      cursor: pointer;
+    }
+    .toast {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      background: #10b981;
+      color: #06281e;
+      font-weight: 700;
+      font-size: 0.85rem;
+      padding: 10px 18px;
+      border-radius: 10px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+      opacity: 0;
+      transform: translateY(10px);
+      transition: all 0.22s ease;
+      pointer-events: none;
+      z-index: 999;
+    }
+    .toast.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div>
+        <h1>36 Hónapos Befektetési Ütemterv & Célportfólió (2026–2029)</h1>
+        <div class="subtitle">Interaktív portfólió-elemző és LocalStorage alapú havi végrehajtási napló</div>
+      </div>
+      <div class="storage-panel">
+        <span class="status-badge" id="storageStatusBadge">✓ LocalStorage aktív</span>
+        <button class="action-btn" onclick="exportBackup()" title="Pipálások mentése JSON fájlba">Mentés exportálása (.json)</button>
+        <button class="action-btn" onclick="document.getElementById('importFile').click()" title="Pipálások visszatöltése">Visszatöltés</button>
+        <input type="file" id="importFile" accept=".json" style="display:none" onchange="importBackup(event)" />
+        <button class="action-btn danger" onclick="resetAllChecks()">Pipák törlése</button>
+      </div>
+    </header>
+
+    <div class="kpi-row">
+      <div class="kpi-card">
+        <div class="kpi-label">Induló vagyon (0. hó)</div>
+        <div class="kpi-val">7 170 000 Ft</div>
+        <div class="kpi-sub">4,27M Ft részvény + 2,90M Ft készpénz</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-label">Eddig befizetett új tőke (Pipált)</div>
+        <div class="kpi-val" id="completedCapitalVal">0 Ft</div>
+        <div class="kpi-sub" id="completedCapitalSub">Hátralévő új tőke: 20 900 000 Ft</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-label">Várható érték (36. hó alap / optimista)</div>
+        <div class="kpi-val">29,88M / 33,45M Ft</div>
+        <div class="kpi-sub">Meglévő részvényekkel + új befizetésekkel</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-label">Deviza / Forint arány (36. hó)</div>
+        <div class="kpi-val">67% Deviza / 33% HUF</div>
+        <div class="kpi-sub">20,03M Ft USD/EUR • 9,85M Ft HUF (0% adó)</div>
+      </div>
+    </div>
+
+    <div class="progress-bar-wrap">
+      <div class="progress-top">
+        <span id="checkProgressText">Teljesítve: 0 / 37 lépés (0%)</span>
+        <span id="lastSavedText" style="color: var(--muted); font-weight: 400; font-size: 0.82rem;">Még nincs mentett módosítás</span>
+      </div>
+      <div class="progress-track">
+        <div class="progress-fill" id="progressBarFill"></div>
+      </div>
+    </div>
+
+    <div class="top-grid">
+      <!-- Left: Interactive Clickable Pie / Donut Chart -->
+      <div class="panel">
+        <div class="panel-title">
+          <span>Célportfólió megoszlása (36. hó)</span>
+          <button class="reset-btn" id="resetSliceBtn" onclick="selectCategory(null)">Összes kategória mutatása</button>
+        </div>
+        <div class="panel-hint">Kattints bármelyik tortaszeletre vagy kategóriára a részletes eszközök szűréséhez! (A kiválasztást is megjegyzi a böngésző)</div>
+
+        <div class="chart-wrapper">
+          <svg class="donut" viewBox="0 0 300 300" id="donutSvg"></svg>
+          <div class="legend-grid" id="legendContainer"></div>
+        </div>
+      </div>
+
+      <!-- Right: Dynamic Drilldown Holdings -->
+      <div class="panel">
+        <div class="panel-title">
+          <span id="drilldownTitle">Összes portfólióelem (14 eszköz)</span>
+          <span id="drilldownTotal" style="color: var(--accent); font-size: 1rem;">29 880 000 Ft</span>
+        </div>
+        <div class="panel-hint" id="drilldownSub">A szeletekre kattintva itt látod az adott kategória pontos ETF-jeit, ISIN-kódjait és részvényeit.</div>
+        <div class="holdings-list" id="holdingsContainer"></div>
+      </div>
+    </div>
+
+    <!-- Bottom: 36-Month Interactive Schedule -->
+    <div class="panel">
+      <div class="filter-bar">
+        <div>
+          <div class="panel-title">Hónapról hónapra követhető ütemterv (0–36. hónap)</div>
+          <div class="panel-hint" style="margin-bottom: 0;">Kattints a sorra vagy a jelölőnégyzetre a teljesítés rögzítéséhez — a böngésző azonnal elmenti a LocalStorage-ba!</div>
+        </div>
+        <div class="tabs">
+          <button class="tab-btn active" id="tab-all" onclick="filterSchedule('all')">Összes (0–36. hó)</button>
+          <button class="tab-btn" id="tab-y0" onclick="filterSchedule('y0')">0. hó (Azonnali 2,9M)</button>
+          <button class="tab-btn" id="tab-y1" onclick="filterSchedule('y1')">1. Év (1–12. hó)</button>
+          <button class="tab-btn" id="tab-y2" onclick="filterSchedule('y2')">2. Év (13–24. hó)</button>
+          <button class="tab-btn" id="tab-y3" onclick="filterSchedule('y3')">3. Év (25–36. hó)</button>
+          <button class="tab-btn" id="tab-pending" onclick="filterSchedule('pending')">Csak hátralévők</button>
+        </div>
+      </div>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th style="width: 56px;">Kész</th>
+              <th>Hónap</th>
+              <th>WebKincstár (Állampapír - 0% adó)</th>
+              <th>Brókerszámla: Energetika & Hálózat ETF</th>
+              <th>Brókerszámla: Stabil Deviza Kötvény ETF</th>
+              <th>Időszaki Összesen</th>
+            </tr>
+          </thead>
+          <tbody id="scheduleBody"></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <div class="toast" id="saveToast">✓ Mentve a böngészőbe (LocalStorage)</div>
+
+  <script>
+    const STORAGE_KEY_CHECKS = "portfolio36m_checked_v2";
+    const STORAGE_KEY_UI = "portfolio36m_ui_state_v2";
+
+    const portfolioData = [
+      {
+        key: "bonds_gov",
+        label: "Stabil láb (Állampapír & Kötvény)",
+        value: 13650000,
+        color: "#3b82f6",
+        holdings: [
+          { ticker: "FIXMÁP", name: "Fix Magyar Állampapír (0–24. hó vásárlásai)", value: 6450000, note: "WebKincstár • 0% SZJA, 0% szocho • Negyedéves kamatfizetés" },
+          { ticker: "DKJ", name: "Diszkont Kincstárjegy (25–36. hó vásárlásai + kamatok)", value: 3400000, note: "WebKincstár • 0% adó • 2029 végi lejáratra időzítve" },
+          { ticker: "IB01", name: "iShares $ Treasury Bond 0-1yr UCITS ETF (Acc)", value: 2300000, note: "ISIN: IE00BGSF1X88 • USD likvid vésztartalék • TER: 0,07%" },
+          { ticker: "XEON", name: "Xtrackers II EUR Overnight Rate Swap UCITS ETF (Acc)", value: 1500000, note: "ISIN: LU0290358497 • EUR napi jegybanki kamat • TER: 0,10%" }
+        ]
+      },
+      {
+        key: "energy_infra",
+        label: "Energetika, Hálózat & Infrastruktúra",
+        value: 9750000,
+        color: "#10b981",
+        holdings: [
+          { ticker: "GRID", name: "First Trust Nasdaq Smart Grid Infra UCITS ETF", value: 3900000, note: "ISIN: IE000J80JTL1 • Okoshálózat, trafók (Schneider, Eaton, ABB)" },
+          { ticker: "ZPDU", name: "SPDR S&P U.S. Utilities Select Sector UCITS ETF", value: 2450000, note: "ISIN: IE00BWBXMB69 • US áramszolgáltatók (NextEra, Constellation)" },
+          { ticker: "ZPDI", name: "SPDR S&P U.S. Industrials Select Sector UCITS ETF", value: 1950000, note: "ISIN: IE00BWBXM724 • Erőművi gépgyártás & hűtés (GE Vernova, Trane)" },
+          { ticker: "NUKL", name: "VanEck Uranium and Nuclear Tech UCITS ETF", value: 1450000, note: "ISIN: IE000M7V94E1 • Nukleáris alaperőművek & SMR technológia" }
+        ]
+      },
+      {
+        key: "bigtech_ev",
+        label: "Meglévő Big Tech & EV (Tartás)",
+        value: 2480000,
+        color: "#f59e0b",
+        holdings: [
+          { ticker: "GOOGL", name: "Alphabet Inc. (10 db - meglévő)", value: 1410000, note: "Meglévő pozíció tartása • Cloud, AI & kereső dominancia" },
+          { ticker: "TSLA", name: "Tesla Inc. (6 db - meglévő)", value: 1070000, note: "Meglévő pozíció tartása • EV, Megapack energiatárolás & FSD" }
+        ]
+      },
+      {
+        key: "semis",
+        label: "Meglévő Félvezetők (Tartás)",
+        value: 2010000,
+        color: "#8b5cf6",
+        holdings: [
+          { ticker: "WOLF", name: "Wolfspeed Inc. (126 db - meglévő)", value: 1470000, note: "Meglévő pozíció • Szilícium-karbid (SiC) • Adóoptimalizálási opció" },
+          { ticker: "TER", name: "Teradyne Inc. (5 db - meglévő)", value: 540000, note: "Meglévő pozíció • Félvezető tesztelés és ipari robotika" }
+        ]
+      },
+      {
+        key: "space_ai",
+        label: "Meglévő Űripar & AI (Tartás)",
+        value: 1990000,
+        color: "#ec4899",
+        holdings: [
+          { ticker: "SPCX", name: "SpaceX kitettség (19 db - meglévő)", value: 1250000, note: "Meglévő pozíció tartása • Űripar és műholdas infrastruktúra" },
+          { ticker: "TEM", name: "Tempus AI Inc. (20 db - meglévő)", value: 740000, note: "Meglévő pozíció tartása • Orvosi diagnosztikai és genomikai AI" }
+        ]
+      }
+    ];
+
+    const scheduleRows = [
+      { id: "m0", year: "y0", month: "0. hó (Most azonnal)", gov: "1 000 000 Ft – FixMÁP (3 éves)", energy: "800 000 Ft – GRID + 600 000 Ft – ZPDU", bondEtf: "500 000 Ft VÉTEL – IB01 (USD)", isBuy: true, total: "2 900 000 Ft", amountNum: 2900000 },
+      // Year 1
+      { id: "m1", year: "y1", month: "1. hónap", gov: "150 000 Ft – FixMÁP", energy: "300 000 Ft – GRID (Smart Grid)", bondEtf: "50 000 Ft félretéve számlán", isBuy: false, total: "500 000 Ft", amountNum: 500000 },
+      { id: "m2", year: "y1", month: "2. hónap", gov: "150 000 Ft – FixMÁP", energy: "300 000 Ft – ZPDU (US Utilities)", bondEtf: "50 000 Ft félretéve számlán", isBuy: false, total: "500 000 Ft", amountNum: 500000 },
+      { id: "m3", year: "y1", month: "3. hónap", gov: "150 000 Ft – FixMÁP", energy: "300 000 Ft – ZPDI (US Industrials)", bondEtf: "150 000 Ft VÉTEL – IB01 (USD) [1–3. hó]", isBuy: true, total: "500 000 Ft", amountNum: 500000 },
+      { id: "m4", year: "y1", month: "4. hónap", gov: "150 000 Ft – FixMÁP", energy: "300 000 Ft – GRID (Smart Grid)", bondEtf: "50 000 Ft félretéve számlán", isBuy: false, total: "500 000 Ft", amountNum: 500000 },
+      { id: "m5", year: "y1", month: "5. hónap", gov: "150 000 Ft – FixMÁP", energy: "300 000 Ft – ZPDU (US Utilities)", bondEtf: "50 000 Ft félretéve számlán", isBuy: false, total: "500 000 Ft", amountNum: 500000 },
+      { id: "m6", year: "y1", month: "6. hónap", gov: "150 000 Ft – FixMÁP", energy: "300 000 Ft – NUKL (Uranium/Nuclear)", bondEtf: "150 000 Ft VÉTEL – XEON (EUR) [4–6. hó]", isBuy: true, total: "500 000 Ft", amountNum: 500000 },
+      { id: "m7", year: "y1", month: "7. hónap", gov: "150 000 Ft – FixMÁP", energy: "300 000 Ft – GRID (Smart Grid)", bondEtf: "50 000 Ft félretéve számlán", isBuy: false, total: "500 000 Ft", amountNum: 500000 },
+      { id: "m8", year: "y1", month: "8. hónap", gov: "150 000 Ft – FixMÁP", energy: "300 000 Ft – ZPDU (US Utilities)", bondEtf: "50 000 Ft félretéve számlán", isBuy: false, total: "500 000 Ft", amountNum: 500000 },
+      { id: "m9", year: "y1", month: "9. hónap", gov: "150 000 Ft – FixMÁP", energy: "300 000 Ft – ZPDI (US Industrials)", bondEtf: "150 000 Ft VÉTEL – IB01 (USD) [7–9. hó]", isBuy: true, total: "500 000 Ft", amountNum: 500000 },
+      { id: "m10", year: "y1", month: "10. hónap", gov: "150 000 Ft – FixMÁP", energy: "300 000 Ft – GRID (Smart Grid)", bondEtf: "50 000 Ft félretéve számlán", isBuy: false, total: "500 000 Ft", amountNum: 500000 },
+      { id: "m11", year: "y1", month: "11. hónap", gov: "150 000 Ft – FixMÁP", energy: "300 000 Ft – ZPDU (US Utilities)", bondEtf: "50 000 Ft félretéve számlán", isBuy: false, total: "500 000 Ft", amountNum: 500000 },
+      { id: "m12", year: "y1", month: "12. hónap", gov: "150 000 Ft – FixMÁP", energy: "300 000 Ft – NUKL (Uranium/Nuclear)", bondEtf: "150 000 Ft VÉTEL – XEON (EUR) [10–12. hó]", isBuy: true, total: "500 000 Ft", amountNum: 500000 },
+      // Year 2
+      { id: "m13", year: "y2", month: "13. hónap", gov: "175 000 Ft – FixMÁP (+kamatok)", energy: "250 000 Ft – GRID (Smart Grid)", bondEtf: "75 000 Ft félretéve számlán", isBuy: false, total: "500 000 Ft", amountNum: 500000 },
+      { id: "m14", year: "y2", month: "14. hónap", gov: "175 000 Ft – FixMÁP", energy: "250 000 Ft – ZPDU (US Utilities)", bondEtf: "75 000 Ft félretéve számlán", isBuy: false, total: "500 000 Ft", amountNum: 500000 },
+      { id: "m15", year: "y2", month: "15. hónap", gov: "175 000 Ft – FixMÁP", energy: "250 000 Ft – ZPDI (US Industrials)", bondEtf: "225 000 Ft VÉTEL – IB01 (USD) [13–15. hó]", isBuy: true, total: "500 000 Ft", amountNum: 500000 },
+      { id: "m16", year: "y2", month: "16. hónap", gov: "175 000 Ft – FixMÁP (+kamatok)", energy: "250 000 Ft – GRID (Smart Grid)", bondEtf: "75 000 Ft félretéve számlán", isBuy: false, total: "500 000 Ft", amountNum: 500000 },
+      { id: "m17", year: "y2", month: "17. hónap", gov: "175 000 Ft – FixMÁP", energy: "250 000 Ft – ZPDU (US Utilities)", bondEtf: "75 000 Ft félretéve számlán", isBuy: false, total: "500 000 Ft", amountNum: 500000 },
+      { id: "m18", year: "y2", month: "18. hónap", gov: "175 000 Ft – FixMÁP", energy: "250 000 Ft – NUKL (Uranium/Nuclear)", bondEtf: "225 000 Ft VÉTEL – XEON (EUR) [16–18. hó]", isBuy: true, total: "500 000 Ft", amountNum: 500000 },
+      { id: "m19", year: "y2", month: "19. hónap", gov: "175 000 Ft – FixMÁP (+kamatok)", energy: "250 000 Ft – GRID (Smart Grid)", bondEtf: "75 000 Ft félretéve számlán", isBuy: false, total: "500 000 Ft", amountNum: 500000 },
+      { id: "m20", year: "y2", month: "20. hónap", gov: "175 000 Ft – FixMÁP", energy: "250 000 Ft – ZPDU (US Utilities)", bondEtf: "75 000 Ft félretéve számlán", isBuy: false, total: "500 000 Ft", amountNum: 500000 },
+      { id: "m21", year: "y2", month: "21. hónap", gov: "175 000 Ft – FixMÁP", energy: "250 000 Ft – ZPDI (US Industrials)", bondEtf: "225 000 Ft VÉTEL – IB01 (USD) [19–21. hó]", isBuy: true, total: "500 000 Ft", amountNum: 500000 },
+      { id: "m22", year: "y2", month: "22. hónap", gov: "175 000 Ft – FixMÁP (+kamatok)", energy: "250 000 Ft – GRID (Smart Grid)", bondEtf: "75 000 Ft félretéve számlán", isBuy: false, total: "500 000 Ft", amountNum: 500000 },
+      { id: "m23", year: "y2", month: "23. hónap", gov: "175 000 Ft – FixMÁP", energy: "250 000 Ft – ZPDU (US Utilities)", bondEtf: "75 000 Ft félretéve számlán", isBuy: false, total: "500 000 Ft", amountNum: 500000 },
+      { id: "m24", year: "y2", month: "24. hónap", gov: "175 000 Ft – FixMÁP", energy: "250 000 Ft – NUKL (Uranium/Nuclear)", bondEtf: "225 000 Ft VÉTEL – XEON (EUR) [22–24. hó]", isBuy: true, total: "500 000 Ft", amountNum: 500000 },
+      // Year 3
+      { id: "m25", year: "y3", month: "25. hónap", gov: "300 000 Ft – DKJ (2029 végi lejárat)", energy: "100 000 Ft – ZPDU (US Utilities)", bondEtf: "100 000 Ft félretéve számlán", isBuy: false, total: "500 000 Ft", amountNum: 500000 },
+      { id: "m26", year: "y3", month: "26. hónap", gov: "300 000 Ft – DKJ (2029 végi lejárat)", energy: "100 000 Ft – GRID (Smart Grid)", bondEtf: "100 000 Ft félretéve számlán", isBuy: false, total: "500 000 Ft", amountNum: 500000 },
+      { id: "m27", year: "y3", month: "27. hónap", gov: "300 000 Ft – DKJ (2029 végi lejárat)", energy: "100 000 Ft – ZPDI (US Industrials)", bondEtf: "300 000 Ft VÉTEL – XEON (EUR) [25–27. hó]", isBuy: true, total: "500 000 Ft", amountNum: 500000 },
+      { id: "m28", year: "y3", month: "28. hónap", gov: "300 000 Ft – DKJ (2029 végi lejárat)", energy: "100 000 Ft – ZPDU (US Utilities)", bondEtf: "100 000 Ft félretéve számlán", isBuy: false, total: "500 000 Ft", amountNum: 500000 },
+      { id: "m29", year: "y3", month: "29. hónap", gov: "300 000 Ft – DKJ (2029 végi lejárat)", energy: "100 000 Ft – GRID (Smart Grid)", bondEtf: "100 000 Ft félretéve számlán", isBuy: false, total: "500 000 Ft", amountNum: 500000 },
+      { id: "m30", year: "y3", month: "30. hónap", gov: "300 000 Ft – DKJ (2029 végi lejárat)", energy: "100 000 Ft – ZPDI (US Industrials)", bondEtf: "300 000 Ft VÉTEL – IB01 (USD) [28–30. hó]", isBuy: true, total: "500 000 Ft", amountNum: 500000 },
+      { id: "m31", year: "y3", month: "31. hónap", gov: "300 000 Ft – DKJ (2029 végi lejárat)", energy: "100 000 Ft – ZPDU (US Utilities)", bondEtf: "100 000 Ft félretéve számlán", isBuy: false, total: "500 000 Ft", amountNum: 500000 },
+      { id: "m32", year: "y3", month: "32. hónap", gov: "300 000 Ft – DKJ (2029 végi lejárat)", energy: "100 000 Ft – GRID (Smart Grid)", bondEtf: "100 000 Ft félretéve számlán", isBuy: false, total: "500 000 Ft", amountNum: 500000 },
+      { id: "m33", year: "y3", month: "33. hónap", gov: "300 000 Ft – DKJ (2029 végi lejárat)", energy: "100 000 Ft – ZPDU (US Utilities)", bondEtf: "300 000 Ft VÉTEL – XEON (EUR) [31–33. hó]", isBuy: true, total: "500 000 Ft", amountNum: 500000 },
+      { id: "m34", year: "y3", month: "34. hónap", gov: "300 000 Ft – DKJ (2029 végi lejárat)", energy: "100 000 Ft – ZPDU (US Utilities)", bondEtf: "100 000 Ft félretéve számlán", isBuy: false, total: "500 000 Ft", amountNum: 500000 },
+      { id: "m35", year: "y3", month: "35. hónap", gov: "300 000 Ft – DKJ (2029 végi lejárat)", energy: "100 000 Ft – ZPDU (US Utilities)", bondEtf: "100 000 Ft félretéve számlán", isBuy: false, total: "500 000 Ft", amountNum: 500000 },
+      { id: "m36", year: "y3", month: "36. hónap (Lezárás)", gov: "300 000 Ft – Készpénz / DKJ lejárat", energy: "100 000 Ft – Készpénz (Kiszállás)", bondEtf: "300 000 Ft – Készpénz [34–36. hó]", isBuy: true, total: "500 000 Ft", amountNum: 500000 }
+    ];
+
+    let activeCategoryKey = null;
+    let currentYearFilter = "all";
+    let memoryFallbackChecks = {};
+    const totalPortfolioValue = portfolioData.reduce((acc, c) => acc + c.value, 0);
+    const totalNewCapital = scheduleRows.reduce((acc, r) => acc + r.amountNum, 0);
+
+    function isLocalStorageAvailable() {
+      try {
+        const testKey = "__ls_test__";
+        window.localStorage.setItem(testKey, "1");
+        window.localStorage.removeItem(testKey);
+        return true;
+      } catch (e) {
+        return false;
+      }
+    }
+
+    const hasLS = isLocalStorageAvailable();
+
+    function showToast(msg) {
+      const toast = document.getElementById("saveToast");
+      toast.textContent = msg || "✓ Mentve a böngészőbe (LocalStorage)";
+      toast.classList.add("show");
+      clearTimeout(window.__toastTimer);
+      window.__toastTimer = setTimeout(() => {
+        toast.classList.remove("show");
+      }, 1800);
+    }
+
+    function getCheckedState() {
+      if (!hasLS) return memoryFallbackChecks;
+      try {
+        // Also migrate v1 key if present
+        const rawV2 = localStorage.getItem(STORAGE_KEY_CHECKS);
+        if (rawV2) return JSON.parse(rawV2);
+        const rawV1 = localStorage.getItem("portfolio36m_checked");
+        if (rawV1) {
+          const parsedV1 = JSON.parse(rawV1);
+          const migrated = {};
+          Object.keys(parsedV1).forEach(k => {
+            if (parsedV1[k]) migrated[k] = { checked: true, updatedAt: "Korábbi mentés" };
+          });
+          localStorage.setItem(STORAGE_KEY_CHECKS, JSON.stringify(migrated));
+          return migrated;
+        }
+        return {};
+      } catch (e) {
+        return memoryFallbackChecks;
+      }
+    }
+
+    function saveCheckedState(stateObj) {
+      memoryFallbackChecks = stateObj;
+      if (hasLS) {
+        try {
+          localStorage.setItem(STORAGE_KEY_CHECKS, JSON.stringify(stateObj));
+          const nowStr = new Date().toLocaleString("hu-HU");
+          localStorage.setItem(STORAGE_KEY_CHECKS + "_lastSaved", nowStr);
+          document.getElementById("lastSavedText").textContent = "Utolsó mentés: " + nowStr;
+          showToast("✓ Mentve a böngészőbe (LocalStorage)");
+        } catch (e) {}
+      }
+    }
+
+    function loadUIState() {
+      if (!hasLS) return;
+      try {
+        const raw = localStorage.getItem(STORAGE_KEY_UI);
+        if (raw) {
+          const parsed = JSON.parse(raw);
+          if (parsed.activeCategoryKey) activeCategoryKey = parsed.activeCategoryKey;
+          if (parsed.currentYearFilter) currentYearFilter = parsed.currentYearFilter;
+        }
+        const lastSaved = localStorage.getItem(STORAGE_KEY_CHECKS + "_lastSaved");
+        if (lastSaved) {
+          document.getElementById("lastSavedText").textContent = "Utolsó mentés: " + lastSaved;
+        }
+      } catch (e) {}
+    }
+
+    function saveUIState() {
+      if (!hasLS) return;
+      try {
+        localStorage.setItem(STORAGE_KEY_UI, JSON.stringify({
+          activeCategoryKey,
+          currentYearFilter
+        }));
+      } catch (e) {}
+    }
+
+    function formatHUF(val) {
+      return val.toLocaleString("hu-HU") + " Ft";
+    }
+
+    function polarToCartesian(cx, cy, r, angleInDegrees) {
+      const angleInRadians = (angleInDegrees - 90) * Math.PI / 180.0;
+      return {
+        x: cx + (r * Math.cos(angleInRadians)),
+        y: cy + (r * Math.sin(angleInRadians))
+      };
+    }
+
+    function createDonutSlicePath(cx, cy, rOuter, rInner, startAngle, endAngle) {
+      const startOuter = polarToCartesian(cx, cy, rOuter, endAngle);
+      const endOuter = polarToCartesian(cx, cy, rOuter, startAngle);
+      const startInner = polarToCartesian(cx, cy, rInner, endAngle);
+      const endInner = polarToCartesian(cx, cy, rInner, startAngle);
+      const largeArcFlag = endAngle - startAngle <= 180 ? "0" : "1";
+
+      return [
+        "M", startOuter.x, startOuter.y,
+        "A", rOuter, rOuter, 0, largeArcFlag, 0, endOuter.x, endOuter.y,
+        "L", endInner.x, endInner.y,
+        "A", rInner, rInner, 0, largeArcFlag, 1, startInner.x, startInner.y,
+        "Z"
+      ].join(" ");
+    }
+
+    function renderDonutChart() {
+      const svg = document.getElementById("donutSvg");
+      const legend = document.getElementById("legendContainer");
+      svg.innerHTML = "";
+      legend.innerHTML = "";
+
+      let startAngle = 0;
+      portfolioData.forEach(cat => {
+        const pct = (cat.value / totalPortfolioValue) * 100;
+        const sliceAngle = (cat.value / totalPortfolioValue) * 360;
+        const endAngle = startAngle + sliceAngle;
+
+        const path = document.createElementNS("http://www.w3.org/2000/svg", "path");
+        path.setAttribute("d", createDonutSlicePath(150, 150, 122, 74, startAngle + 0.8, endAngle - 0.8));
+        path.setAttribute("fill", cat.color);
+        let cls = "slice";
+        if (activeCategoryKey) {
+          cls += (activeCategoryKey === cat.key) ? " active" : " dimmed";
+        }
+        path.setAttribute("class", cls);
+        path.onclick = () => selectCategory(activeCategoryKey === cat.key ? null : cat.key);
+        svg.appendChild(path);
+
+        startAngle = endAngle;
+
+        const item = document.createElement("div");
+        item.className = "legend-item" + (activeCategoryKey === cat.key ? " active" : "");
+        item.onclick = () => selectCategory(activeCategoryKey === cat.key ? null : cat.key);
+        item.innerHTML = `
+          <div class="legend-left">
+            <span class="dot" style="background:${cat.color}"></span>
+            <span>${cat.label}</span>
+          </div>
+          <div class="legend-right">
+            <strong>${formatHUF(cat.value)}</strong>
+            <span class="legend-pct">(${pct.toFixed(1)}%)</span>
+          </div>
+        `;
+        legend.appendChild(item);
+      });
+
+      const selectedCat = portfolioData.find(c => c.key === activeCategoryKey);
+      const centerTitle = selectedCat ? selectedCat.label.split("(")[0].trim() : "Várható 3 éves érték";
+      const centerVal = selectedCat ? formatHUF(selectedCat.value) : formatHUF(totalPortfolioValue);
+      const centerPct = selectedCat ? ((selectedCat.value / totalPortfolioValue) * 100).toFixed(1) + "% a portfólióból" : "100% (36. hónap)";
+
+      const g = document.createElementNS("http://www.w3.org/2000/svg", "g");
+      g.setAttribute("text-anchor", "middle");
+      g.innerHTML = `
+        <text x="150" y="133" fill="#94a3b8" font-size="11" font-weight="500">${centerTitle}</text>
+        <text x="150" y="156" fill="#f8fafc" font-size="15.5" font-weight="700">${centerVal}</text>
+        <text x="150" y="175" fill="#38bdf8" font-size="11" font-weight="600">${centerPct}</text>
+      `;
+      svg.appendChild(g);
+    }
+
+    function renderHoldings() {
+      const container = document.getElementById("holdingsContainer");
+      const titleEl = document.getElementById("drilldownTitle");
+      const totalEl = document.getElementById("drilldownTotal");
+      const resetBtn = document.getElementById("resetSliceBtn");
+      container.innerHTML = "";
+
+      const catsToShow = activeCategoryKey
+        ? portfolioData.filter(c => c.key === activeCategoryKey)
+        : portfolioData;
+
+      if (activeCategoryKey && catsToShow.length > 0) {
+        const c = catsToShow[0];
+        titleEl.textContent = c.label + ` (${c.holdings.length} eszköz)`;
+        totalEl.textContent = formatHUF(c.value);
+        resetBtn.classList.add("visible");
+      } else {
+        titleEl.textContent = "Összes portfólióelem (14 eszköz)";
+        totalEl.textContent = formatHUF(totalPortfolioValue);
+        resetBtn.classList.remove("visible");
+      }
+
+      const baseTotal = (activeCategoryKey && catsToShow.length > 0) ? catsToShow[0].value : totalPortfolioValue;
+
+      catsToShow.forEach(cat => {
+        cat.holdings.forEach(h => {
+          const shareOfView = (h.value / baseTotal) * 100;
+          const shareOfTotal = (h.value / totalPortfolioValue) * 100;
+          const card = document.createElement("div");
+          card.className = "holding-card";
+          card.style.borderLeftColor = cat.color;
+          card.innerHTML = `
+            <div class="holding-top">
+              <div>
+                <span class="ticker-badge">${h.ticker}</span>
+                <span class="holding-name">${h.name}</span>
+              </div>
+              <div class="holding-val">${formatHUF(h.value)}</div>
+            </div>
+            <div class="bar-bg">
+              <div class="bar-fill" style="width:${shareOfView.toFixed(1)}%; background:${cat.color}"></div>
+            </div>
+            <div class="holding-meta">
+              <span>${h.note}</span>
+              <span>Teljes portfólió: <strong>${shareOfTotal.toFixed(1)}%</strong></span>
+            </div>
+          `;
+          container.appendChild(card);
+        });
+      });
+    }
+
+    function selectCategory(key) {
+      activeCategoryKey = key;
+      saveUIState();
+      renderDonutChart();
+      renderHoldings();
+    }
+
+    function toggleRowCheck(id, event) {
+      if (event) event.stopPropagation();
+      const state = getCheckedState();
+      const currentEntry = state[id];
+      const isCurrentlyChecked = currentEntry && (currentEntry === true || currentEntry.checked);
+
+      if (isCurrentlyChecked) {
+        delete state[id];
+      } else {
+        const nowStr = new Date().toLocaleDateString("hu-HU", {
+          year: "numeric", month: "2-digit", day: "2-digit", hour: "2-digit", minute: "2-digit"
+        });
+        state[id] = { checked: true, updatedAt: nowStr };
+      }
+
+      saveCheckedState(state);
+      renderSchedule();
+    }
+
+    function filterSchedule(yearKey) {
+      currentYearFilter = yearKey;
+      saveUIState();
+      document.querySelectorAll(".tab-btn").forEach(b => b.classList.remove("active"));
+      const activeBtn = document.getElementById("tab-" + yearKey);
+      if (activeBtn) activeBtn.classList.add("active");
+      renderSchedule();
+    }
+
+    function renderSchedule() {
+      const tbody = document.getElementById("scheduleBody");
+      const state = getCheckedState();
+      tbody.innerHTML = "";
+
+      const rows = scheduleRows.filter(r => {
+        if (currentYearFilter === "all") return true;
+        if (currentYearFilter === "pending") {
+          const entry = state[r.id];
+          return !(entry && (entry === true || entry.checked));
+        }
+        return r.year === currentYearFilter;
+      });
+
+      rows.forEach(r => {
+        const entry = state[r.id];
+        const checked = !!(entry && (entry === true || entry.checked));
+        const dateNote = (entry && entry.updatedAt) ? `<span class="timestamp-tag">✓ ${entry.updatedAt}</span>` : "";
+
+        const tr = document.createElement("tr");
+        tr.className = "row-item" + (checked ? " completed" : "");
+        tr.onclick = (e) => {
+          if (e.target.tagName.toLowerCase() === "input") return;
+          toggleRowCheck(r.id, e);
+        };
+        tr.innerHTML = `
+          <td>
+            <input type="checkbox" ${checked ? "checked" : ""} onclick="toggleRowCheck('${r.id}', event)" />
+          </td>
+          <td class="strike">
+            <strong>${r.month}</strong>
+            ${dateNote}
+          </td>
+          <td class="strike">${r.gov}</td>
+          <td class="strike">${r.energy}</td>
+          <td class="strike"><span class="${r.isBuy ? 'badge-buy' : 'badge-save'}">${r.bondEtf}</span></td>
+          <td class="strike"><strong>${r.total}</strong></td>
+        `;
+        tbody.appendChild(tr);
+      });
+
+      // Compute progress metrics
+      let completedCount = 0;
+      let completedForint = 0;
+      scheduleRows.forEach(r => {
+        const entry = state[r.id];
+        if (entry && (entry === true || entry.checked)) {
+          completedCount++;
+          completedForint += r.amountNum;
+        }
+      });
+
+      const pct = (completedCount / scheduleRows.length) * 100;
+      document.getElementById("checkProgressText").textContent =
+        `Teljesítve: ${completedCount} / ${scheduleRows.length} lépés (${pct.toFixed(1)}%)`;
+      document.getElementById("progressBarFill").style.width = `${pct.toFixed(1)}%`;
+
+      const remainingForint = totalNewCapital - completedForint;
+      document.getElementById("completedCapitalVal").textContent = formatHUF(completedForint);
+      document.getElementById("completedCapitalSub").textContent =
+        `Hátralévő új tőke: ${formatHUF(remainingForint)}`;
+    }
+
+    function resetAllChecks() {
+      if (!confirm("Biztosan törölni szeretnéd az összes eddigi pipálást a böngészőből?")) return;
+      saveCheckedState({});
+      renderSchedule();
+      showToast("Minden pipálás törölve");
+    }
+
+    function exportBackup() {
+      const data = {
+        version: 2,
+        exportedAt: new Date().toISOString(),
+        checks: getCheckedState(),
+        ui: { activeCategoryKey, currentYearFilter }
+      };
+      const blob = new Blob([JSON.stringify(data, null, 2)], { type: "application/json" });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = "befektetesi_utemterv_mentes.json";
+      a.click();
+      URL.revokeObjectURL(url);
+    }
+
+    function importBackup(event) {
+      const file = event.target.files[0];
+      if (!file) return;
+      const reader = new FileReader();
+      reader.onload = (e) => {
+        try {
+          const parsed = JSON.parse(e.target.result);
+          if (parsed && parsed.checks) {
+            saveCheckedState(parsed.checks);
+            renderSchedule();
+            showToast("✓ Mentés sikeresen visszatöltve!");
+          }
+        } catch (err) {
+          alert("Hibás JSON mentési fájl.");
+        }
+      };
+      reader.readAsText(file);
+    }
+
+    // Init
+    if (!hasLS) {
+      const badge = document.getElementById("storageStatusBadge");
+      badge.textContent = "⚠ LocalStorage korlátozott (Memória mód)";
+      badge.classList.add("warn");
+    }
+    loadUIState();
+    document.querySelectorAll(".tab-btn").forEach(b => b.classList.remove("active"));
+    const initTab = document.getElementById("tab-" + currentYearFilter) || document.getElementById("tab-all");
+    if (initTab) initTab.classList.add("active");
+
+    renderDonutChart();
+    renderHoldings();
+    renderSchedule();
+  </script>
+</body>
+</html>
